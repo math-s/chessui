@@ -171,6 +171,7 @@ function connectWebSocket() {
                 } else {
                     pendingFen = data.fen;
                 }
+                // Update game status and move history
                 document.getElementById('gameStatus').textContent = data.status;
                 updateMoveHistory(data.move_history);
                 break;

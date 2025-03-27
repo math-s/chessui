@@ -1,0 +1,18 @@
+{% if status %}
+<div class="game-status">{{ status }}</div>
+{% endif %}
+
+<div class="move-history">
+    <h3>Move History</h3>
+    <div id="moveList">
+        {% for i in range(0, move_history|length, 2) %}
+            {% set move_number = (i // 2) + 1 %}
+            <div class="move-entry">
+                {{ move_number }}. {{ move_history[i] }}
+                {% if move_history[i + 1] %}
+                    {{ move_history[i + 1] }}
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div> 

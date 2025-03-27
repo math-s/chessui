@@ -90,6 +90,7 @@ button:hover {
     border-radius: 4px;
     max-height: 300px;
     overflow-y: auto;
+    transition: all 0.3s ease;
 }
 
 .move-history h3 {
@@ -114,4 +115,27 @@ button:hover {
 
 .highlight-c2-100 {
     box-shadow: inset 0 0 3px 3px rgba(255, 255, 0, 0.5);
+}
+
+/* HTMX transition classes */
+.htmx-swapping {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+.htmx-request {
+    opacity: 0.7;
+}
+
+/* Ensure smooth updates */
+#gameStatusContainer {
+    transition: all 0.3s ease;
+}
+
+#gameStatusContainer.htmx-swapping {
+    opacity: 0;
+}
+
+#gameStatusContainer.htmx-request {
+    opacity: 0.7;
 } 
