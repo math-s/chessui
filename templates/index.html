@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Chess Game</h1>
+        <div class="game-layout">
+            <div class="game-info">
+                <p>Game ID: <span id="gameId"></span></p>
+                <p>Status: <span id="status" class="status-disconnected">Waiting for opponent...</span></p>
+                <div class="player-info white-player" id="whitePlayer">You are playing as White</div>
+                <div class="player-info black-player" id="blackPlayer">You are playing as Black</div>
+                <div class="game-status" id="gameStatus"></div>
+                <div class="move-history">
+                    <h3>Move History</h3>
+                    <div id="moveList"></div>
+                </div>
+            </div>
+            <div class="board-container">
+                <div id="board"></div>
+                <div class="controls">
+                    <button onclick="createNewGame()" id="newGameBtn">New Game</button>
+                    <button onclick="joinGame()" id="joinGameBtn">Join Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/chess.js"></script>
+</body>
+</html> 
